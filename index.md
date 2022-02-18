@@ -15,17 +15,15 @@ that renders initially is a single disclosure icon.
 Live Example
 ------------
 
-[A live example can be found here](http://caldwell.github.io/renderjson).
-
-Here's the code:
-
-```html
-<div id="test">
+<div id="test"></div>
 <script type="text/javascript" src="renderjson.js"></script>
 <script>
 var example = {
     "glossary": {
         "title": "example glossary",
+        "comprehensive": true,
+        "link": undefined,
+        "count": 1,
         "GlossDiv": {
             "title": "S",
             "GlossList": {
@@ -45,7 +43,41 @@ var example = {
         }
     }
 };
-    document.getElementById("test").appendChild(renderjson(example));
+document.getElementById("test").appendChild(renderjson(example));
+</script>
+
+Here's the code:
+
+```html
+<div id="test"></div>
+<script type="text/javascript" src="renderjson.js"></script>
+<script>
+var example = {
+    "glossary": {
+        "title": "example glossary",
+        "comprehensive": true,
+        "link": undefined,
+        "count": 1,
+        "GlossDiv": {
+            "title": "S",
+            "GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+                    "SortAs": "SGML",
+                    "GlossTerm": "Standard Generalized Markup Language",
+                    "Acronym": "SGML",
+                    "Abbrev": "ISO 8879:1986",
+                    "GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                        "GlossSeeAlso": ["GML", "XML"]
+                    },
+                    "GlossSee": "markup"
+                }
+            }
+        }
+    }
+};
+document.getElementById("test").appendChild(renderjson(example));
 </script>
 ```
 
@@ -108,6 +140,18 @@ renderjson.set_sort_objects(sort_bool);
 
 Sort objects by key (default: false)
 
+```javascript
+renderjson.set_replacer(replacer_function)
+renderjson.set_property_list(property_list)
+```
+
+These are the equivalent of the JSON.stringify() `replacer` parameter.
+[Mozilla's documentation][1] has a good description of how this parameter
+works. See [test.html](https://github.com/caldwell/renderjson/blob/master/test.html) for an example of what these
+can do.
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
 These functions are chainable so you may do:
 
 ```javascript
@@ -136,7 +180,9 @@ you'd like:
 Copyright and License
 ---------------------
 
-Copyright © 2013-2014 David Caldwell \<david@porkrind.org\>
+License: [ISC](https://en.wikipedia.org/wiki/ISC_license)
+
+Copyright © 2013-2017 David Caldwell \<david@porkrind.org\>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
