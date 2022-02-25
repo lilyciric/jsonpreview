@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .renderjson a { text-decoration: none; }
+      .renderjson .disclosure { color: crimson;
+                                font-size: 150%; }
+      .renderjson .syntax { color: grey; }
+      .renderjson .string { color: darkred; }
+      .renderjson .number { color: darkcyan; }
+      .renderjson .boolean { color: blueviolet; }
+      .renderjson .key    { color: darkblue; }
+      .renderjson .keyword { color: blue; }
+      .renderjson .object.syntax { color: lightseagreen; }
+      .renderjson .array.syntax  { color: orange; }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <h1></h1>
+
+    <div id="dest"></div>
+
+    <script type="text/javascript" src="renderjson.js"></script>
+    <script>
+document.getElementById("dest").appendChild(
+  renderjson//.set_show_by_default(true)
+            .set_show_to_level(6)
+            //.set_sort_objects(true)
+            //.set_icons('+', '-')
+              .set_max_string_length(100)
+    ([
+// Examples from http://json.org/example.html
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 1,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "2gzui7nqq32v"
+          }
+        },
+        "id": "6MgDA1LrEhuCfXCP9YnV8E",
+        "type": "Entry",
+        "createdAt": "2022-01-28T19:26:48.396Z",
+        "updatedAt": "2022-01-28T19:28:18.697Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "product"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "internalName": "Jim's legendary coffee mug",
+        "title": "Jim's legendary coffee mug",
+        "description": {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Shall we spill a secret? Rumor has it that Jim’s mug is magical. Pour in any type of coffee and it will transform it into the most flavorsome and aromatic cup of joe you’ll ever experience. Well there is one word to describe it - legendary.  From ordinary into extraordinary, get Jim’s legendary coffee mug while supplies last!",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          ],
+          "nodeType": "document"
+        },
+        "price": 9.99,
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "47uuoEBXt61V9QVgd3UfTc"
+          }
+        }
+      }
+    }
+  ],
+  "includes": {
+    "Asset": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "2gzui7nqq32v"
+            }
+          },
+          "id": "47uuoEBXt61V9QVgd3UfTc",
+          "type": "Asset",
+          "createdAt": "2022-01-19T22:11:05.284Z",
+          "updatedAt": "2022-01-19T22:11:05.284Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Jim's mug",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/2gzui7nqq32v/47uuoEBXt61V9QVgd3UfTc/7fccde26ab11c9b17cf95dfe287bbc37/9cac0d60-fa90-4907-878d-819a4aa21b45.png",
+            "details": {
+              "size": 1062306,
+              "image": {
+                "width": 1057,
+                "height": 979
+              }
+            },
+            "fileName": "9cac0d60-fa90-4907-878d-819a4aa21b45.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    ]
+  }
+}
+]));
+    </script>
+  </body>
+</html>
